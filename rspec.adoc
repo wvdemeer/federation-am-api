@@ -224,6 +224,20 @@ change it at all.
 
 Each +client_id+ must be globally unique: no other node in the same RSpec may have the same +client_id+.
 
+==== attribute +sliver_id+
+
+***********************************
+[horizontal]
+In advertisement:: no
+In request:: no
+In manifest:: optional
+type:: +xs:string+ containing URN
+***********************************
+
++sliver_id+ is used in manifest, to specify which nodes, links and interfaces belong to which sliver.
+While this is optional in the geni RSpec v3 XSD, this is actually required in practice, 
+to allow clients to map between components and the sliver these components belong to.
+
 ==== attribute +component_id+
 
 ***********************************
@@ -461,6 +475,18 @@ type:: +xs:string+
 This is similar to the +client_id+ in node. It is used only by the client as a fixed identifier for the interface.
 Each +client_id+ must be globally unique: no other interface in the same RSpec may have the same +client_id+.
 
+==== attribute +sliver_id+
+
+***********************************
+[horizontal]
+In advertisement:: no
+In request:: no
+In manifest:: optional
+type:: +xs:string+ containing URN
+***********************************
+
++sliver_id+ is used in manifest, to specify which nodes, links and interfaces belong to which sliver.
+
 ==== attribute component_id
 
 *TODO*
@@ -505,6 +531,20 @@ type:: +xs:string+
 
 This is similar to the +client_id+ in node. It is used only by the client as a fixed identifier for the link.
 Each +client_id+ must be globally unique: no other link in the same RSpec may have the same +client_id+.
+
+==== attribute +sliver_id+
+
+***********************************
+[horizontal]
+In advertisement:: no
+In request:: no
+In manifest:: optional
+type:: +xs:string+ containing URN
+***********************************
+
++sliver_id+ is used in manifest, to specify which nodes, links and interfaces belong to which sliver.
+While this is optional in the geni RSpec v3 XSD, this is actually required in practice, 
+to allow clients to map between components and the sliver these components belong to.
 
 ==== element +component_manager+
 
