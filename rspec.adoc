@@ -15,6 +15,8 @@ Most of the text is original, based on available documents and experiences with 
 These parts in particular might still contain errors.
 Some text was copied from the AMv3 API or other sources.
 
+The real life RSpec usage was studied on various AMs (such as emulab, planetlab, exogeni, ...) and with various client software (flack and omni). (The jFed client was based on these observations.)
+
 It still contains some TODOs. 
 More example should also still be added.
 ====================================================
@@ -398,7 +400,10 @@ In manifest:: no
 ***********************************
 
 Has a required attribute "now" which is an +xs:boolean+.
-If true, the node is available. If not, the node is not available.
+If true, the node is available now. If not, the node is not available now.
+
+The exact meaning of "available now" is: the resource is available for allocation and provision at the moment of the generation of the advertisement RSpec. Specifically, at that time, allocation/provision will not fail because the resource is in maintenance, in use or reserved.
+However, allocation/provision could still fail due to other reasons such as permission issues. Also, by the time a user actually performs an allocation call, the situation may have changed.
 
 [source]
 ------------------
